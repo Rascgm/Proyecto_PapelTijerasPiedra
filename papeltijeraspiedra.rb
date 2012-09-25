@@ -4,68 +4,75 @@ jugadas = [ :piedra, :papel, :tijeras]
 
 comp = jugadas.sample
 
-puts comp
+puts "> PC: #{comp}"
 
-jugador = ARGV.shift || jugadas.sample
+jugador = ARGV.shift
 
-puts jugador
+jugador = jugadas.sample if /piedra|papel|tijeras/.match(jugador) == nil
 
-if comp == jugador
+puts "> Jugador: #{jugador}"
+
+def _partida(comp,jugador)
+
+  if comp == jugador
 	
-	puts "> Empate; ambos sacaron #{comp}"
+	  puts "> Empate; ambos sacaron #{comp}" 	
 	
-	
-else
+  else
 		
-	g_comp = true
-	g_play = true
+	  g_comp = true
+	  g_play = true
 		
-	case
+	  case
 			
-		when jugador == :piedra then 
+		  when jugador == :piedra then 
 		
-		      if comp == :papel
+		        if comp == :papel
 			
-			      g_play = false
+			        g_play = false
 			
-		      else
+		        else
 				
-			      g_comp = false
+			        g_comp = false
 				
-			end
+			  end
 			
-		when jugador == :papel then
+		  when jugador == :papel then
 		
-		if comp == :tijeras
+		  if comp == :tijeras
 			
-			      g_play = false
+			        g_play = false
 			
-		      else
+		        else
 				
-			      g_comp = false
+			        g_comp = false
 				
-			end
+			  end
 			
-		when jugador == :tijeras then
+		  when jugador == :tijeras then
 		
-		if comp == :piedra
+		  if comp == :piedra
 			
-			      g_play = false
+			        g_play = false
 			
-		      else
+		        else
 				
-			      g_comp = false
+			        g_comp = false
 				
-			end
+		          end
 			
-	end
+	  end
 		
-	text = 'Jugador'
+	  text = 'Jugador'
 		
-	text = 'PC' if g_comp == true 
+	  text = 'PC' if g_comp == true 
 		
-	puts "> Gana el #{text}"
+  	  puts "> Gana el #{text}"
 		
 		
 		
+  end
+
 end
+
+_partida(comp,jugador)
