@@ -14,25 +14,58 @@ if comp == jugador
 	
 	puts "> Empate; ambos sacaron #{comp}"
 	
-	else
+	
+else
 		
-		g_com = true
-		g_play = true
+	g_comp = true
+	g_play = true
 		
-		case
+	case
 			
-			when jugador == :piedra then g_play = false if comp == :papel 
-			when jugador == :papel then g_play = false if comp == :tijeras  
-			when jugador == :tijeras then g_play = false if comp == :piedra
+		when jugador == :piedra then 
+		
+		      if comp == :papel
 			
-		end
+			      g_play = false
+			
+		      else
+				
+			      g_comp = false
+				
+			end
+			
+		when jugador == :papel then
 		
-		text = 'Jugador'
+		if comp == :tijeras
+			
+			      g_play = false
+			
+		      else
+				
+			      g_comp = false
+				
+			end
+			
+		when jugador == :tijeras then
 		
-		text = 'PC' if g_com == true 
-		
-		puts "> Gana el #{text}"
-		
-		
-		
+		if comp == :piedra
+			
+			      g_play = false
+			
+		      else
+				
+			      g_comp = false
+				
+			end
+			
 	end
+		
+	text = 'Jugador'
+		
+	text = 'PC' if g_comp == true 
+		
+	puts "> Gana el #{text}"
+		
+		
+		
+end
