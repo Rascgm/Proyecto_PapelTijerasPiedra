@@ -1,0 +1,33 @@
+task :all do
+
+  puts "> Debug del programa"
+  puts "> Jugador saca tijeras"
+  puts " "
+  ruby "papeltijeraspiedra.rb tijeras"
+  puts " "
+  puts "> Jugador saca papel"
+  ruby "papeltijeraspiedra.rb papel"
+  puts " "
+  puts "> Jugador saca piedra"
+  puts " "
+  ruby "papeltijeraspiedra.rb piedra"
+
+end
+
+task :papel do
+
+  ruby "papeltijeraspiedra.rb papel"
+
+end
+
+task :tijeras do
+
+  ruby "papeltijeraspiedra.rb tijeras"
+
+end
+
+task :piedra do
+
+  ruby "papeltijeraspiedra.rb piedra"
+
+end
